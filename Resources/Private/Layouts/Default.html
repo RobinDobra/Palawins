@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Palawins</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>                            <!-- JQuery (muss am Anfang geladen werden, das es eine Dependency für anderes ist (for Datatables) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">  <!-- Bootstrap (from Datatables) -->
+        <link rel="stylesheet" href="/var/www/html/paladins/Packages/Application/Paladins.Palawins/Resources/Public/css/bootstrap-custom.css">
+
+    </head>
+
+    <body class="myBg">
+        
+        <nav class="navbar navbar-toogle navbar-expand-lg navbar-dark bg-dark " >                         <!-- Setzt Hintergrund und Schrift der Navbar -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  <!-- Stellt den Burgerbutton beim kleiner werden dar -->
+                <span class="navbar-toggler-icon"></span>                                                 <!-- Burgerbutton -->
+            </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">                               <!-- klappt Navbar bei kleiner machen zusammen -->
+            <ul class="navbar-nav mr-auto">                                                              <!-- Alignment -->
+                <li class="nav-item active">
+                    <f:link.action action="index" controller="Champion">Home</f:link.action>             <!-- Home -->
+                </li>
+                <li class="nav-item">                                                                    <!-- neues Item der Navbar -->
+                    <f:link.action action="index" controller="Datenschutz">Datenschutz</f:link.action>   <!-- Datenschutz -->
+                </li>
+                <li class="nav-item">                                                                    <!-- neues Item der Navbar -->
+                    <f:link.action action="index" controller="Impressum">Impressum</f:link.action>       <!-- Impressum -->
+                </li>
+            </ul>
+            
+            <f:form action='index' controller ='Champion' class="form-inline my-2 my-lg-0" >             <!-- Fluid ViewHelper für die Suchform -->
+                <f:form.textfield name="filter" class="form-control mr-sm-2" id="filter" placeholder="Barik, Maeve, Strix"  />   <!-- Fluid Textfeld der Suchform -->
+                <f:form.button type="submit" name="buttonName" value="buttonValue" formmethod="champion" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</f:form.button> <!-- Fluid Button der Suchform -->
+            </f:form>
+          </div>
+        </nav>
+    <f:render section="Content"/>
+
+        
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>   <!-- Popper (from Bootstrap)-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>      <!-- Bootstrap (from Bootstrap)-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+    </body>
+</html>

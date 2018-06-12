@@ -1,0 +1,176 @@
+@import "functions";
+@import "variables";
+@import "mixins";
+
+//Abstand der Tabelle von der Navbar
+.myPadding {
+    padding-top: 4%;
+}
+
+.navbar {
+    opacity: 0.9;
+}
+
+
+// Macht die Tabelle etwas schmaler
+.myContainer {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    opacity: 0.99;
+    
+}
+
+// Setzt das Hintergrundbild
+.myBg {
+  background-color: grey;
+  background-image: url("../pictures/2.png");
+}
+
+//beschreibt die Tabelle
+.table {
+    display: table;
+    //border: 2px solid black;
+    border-collapse: collapse;
+    opacity: 0.99;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    //border-radius: 16px;
+    overflow: hidden;
+}
+
+.table-dark {
+       background-color: #313539;
+}
+
+// Hover der Tabelle
+.table-dark.table-hover tbody tr:hover {
+    background-color: #405040;
+}
+
+thead {
+    background-color: #405040;
+    opacity: 0.9;
+    border-radius: 16px;
+}
+
+.nav-item a {
+    padding: 0.75rem;
+    color: #acb5bd;
+}
+
+.page-navigation ul li{
+    background-color: #3f4e5e;
+    float: left;
+    //padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    
+    display: inline;
+    margin: 0 4px;
+}
+
+.page-navigation ul li a{
+    color:white;
+    display: block;
+    padding: 8px 16px;
+    
+}
+
+
+.page-navigation ul li.current {
+    background-color: #408040;
+    color: white;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+}
+
+.page-navigation ul > li:hover {
+    background-color: rgba(30, 30, 100, 0.80);
+    opacity: 1;
+}
+
+.page-navigation ul li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.page-navigation ul li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.page-navigation ul li:last-child {
+    text-align: center;
+}
+
+.page-navigation{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.neos-fluid-widget-paginator {
+    display: inline-block;
+    padding: 0px;
+}
+
+.textcontainer {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 4%;
+    opacity: 0.9;
+    color: #ceceb6;
+    background-color: #10090E;
+    border-radius: 5px 20px 5px 20px;
+}
+
+.textblock {
+    height: 100%;
+    padding-top: 2%;
+    padding-left: 6%;
+    padding-right: 6%;
+    border: 1px solid #9e4111;
+    //border-radius: 3px 15px 5px 30px;
+    border-radius: 5px 20px 5px 20px;
+}
+
+.textblock p {
+    color: #ceceb6;
+    font: Arial, Helvetica, sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.textblock h2 {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    color: #91A8B6;
+    letter-spacing: 1px;
+    font: Arial, Helvetica, sans-serif;
+    line-height: 40px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+@include media-breakpoint-down(md) {
+    .page-navigation ul li.previous {
+        display: none;
+    }
+    .page-navigation ul li.next {
+        display: none;
+    }
+    .myContainer {
+    width: 100%;
+    }  
+    .textcontainer {
+    width: 100;
+    }
+}
+
+td a {
+    color: #28a745;
+    padding: 5px;
+}
+
+td a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}

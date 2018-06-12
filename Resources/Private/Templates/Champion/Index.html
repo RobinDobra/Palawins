@@ -1,0 +1,58 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Show my table</f:section>
+
+<f:section name="Content">
+    <div class="myPadding" >                                                                                    <!-- Abstand nach oben -->
+        <div class="table-responsive myContainer align-content-center limiter" style="overflow-x:auto;" >       <!-- Container der Tabelle -->
+            <table id="championTable" class="table table-dark table-striped table-hover" >                      <!-- dunkle Tabelle mit alternierender Spaltenfarbe -->
+                <thead class="header" >   
+                    <tr >
+                        <td align="center" scope="col" width='20%' border-top-left-radius="16px"># 
+                        </td>
+                        <td align="left" scope="col" >Champion                
+                            <f:link.action action="index" additionalParams = "{sort:'nameUp'}">                 <!-- ruft Sortierung für Champion aufsteigend auf -->
+                                <i class="fas fa-long-arrow-alt-up"></i>
+                            </f:link.action>
+                            <f:link.action action="index" additionalParams = "{sort:'nameDown'}">               <!-- ruft Sortierung für Champion absteigend auf -->
+                                <i class="fas fa-long-arrow-alt-down"></i>
+                            </f:link.action>
+                        </td>
+                        <td align="left" scope="col" border-top-right-radius="16px">Most Popular
+                            <f:link.action action="index" additionalParams = "{sort:'mostPopularUp'}">         <!-- ruft Sortierung für populärste Loadouts aufsteigend auf -->
+                                <i class="fas fa-long-arrow-alt-up"></i>
+                            </f:link.action>
+                            <f:link.action action="index" additionalParams = "{sort:'mostPopularDown'}">       <!-- ruft Sortierung für populärste Loadouts absteigend auf -->
+                                <i class="fas fa-long-arrow-alt-down"></i>
+                            </f:link.action>
+                            
+                        </td>
+                        <td align="left" scope="col" width='30%' border-top-left-radius="16px">Most Successful
+                            <f:link.action action="index" additionalParams = "{sort:'mostSuccessfulUp'}">      <!-- ruft Sortierung für erfolgreichste Loadouts aufsteigend auf -->
+                                <i class="fas fa-long-arrow-alt-up"></i>
+                            </f:link.action>
+                            <f:link.action action="index" additionalParams = "{sort:'mostSuccessfulDown'}">    <!-- ruft Sortierung für erfolgreichste Loadouts absteigend auf -->
+                                <i class="fas fa-long-arrow-alt-down"></i>
+                            </f:link.action>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody class="bodytext">
+                    
+                <f:widget.paginate objects="{champions}" as="paginatedChampions" configuration="{itemsPerPage: 15}" >   <!-- Fügt der Tabelle eine Pagination hinzu -->
+                    <f:for each="{paginatedChampions}" as="myChampion" iteration="iterator" key="itemkey">             <!-- Der Pagination werden nun alle Championelemente hinzugefügt -->
+                        <tr>
+                            <td align="center">{iterator.cycle}</td>
+                            <td align="left">{myChampion.name}</td>
+                            <td align="left">{myChampion.mostPopular}</td>
+                            <td align="left">{myChampion.mostSuccessful}</td>
+                        </tr>
+                    </f:for>
+                </f:widget.paginate>
+                </tbody>
+            </table>
+    </div>
+        </div>
+</div>
+
+</f:section>
