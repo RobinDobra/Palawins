@@ -1,0 +1,8 @@
+-
+  name: 'Championindex'
+  uriPattern: ''
+  defaults:
+    '@package':    'Paladins.Palawins'
+    '@controller': 'Champion'
+    '@action':     'index'
+    '@format':     'html'
